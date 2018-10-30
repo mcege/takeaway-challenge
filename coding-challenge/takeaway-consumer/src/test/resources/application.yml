@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: unit-test
+
+server:
+  port: 8080
+
+
+queues:
+  consumer:
+    queue: consumer.queue
+    dead-letter: consumer.dead-letter.queue
+    routing: consumer
+    exchange: consumer.exchange

@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: unit-test
+  properties:
+    hibernate:
+      globally_quoted_identifiers: true
+      enable_lazy_load_no_trans: true
+      temp:
+        use_jdbc_metadata_defaults: false
+    show-sql: true
+    open-in-view: false
+    datasource:
+      driverClassName: org.hsqldb.jdbcDriver
+      url: jdbc:hsqldb:mem:producer;sql.syntax_pgs=true
+      username: sa
+      password:
+  data:
+    jpa.repositories.enabled: true
+    redis.repositories.enabled: false
+  jpa:
+    database: hsql
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        enable_lazy_load_no_trans: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 8081
+
+queues:
+  consumer:
+    queue: consumer.queue
+    dead-letter: consumer.dead-letter.queue
+    routing: consumer
+    exchange: consumer.exchange

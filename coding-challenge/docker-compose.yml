@@ -1,0 +1,53 @@
+version: '3'
+services:
+
+  takeaway-mq:
+    image: rabbitmq:3-management
+    container_name: takeaway-mq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - takeaway
+  takeaway-postgres:
+    build: .
+    image: postgres:initdb
+    container_name: takeaway-postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DBNAME=takeaway
+      - ALLOW_IP_RANGE=0.0.0.0/0
+    volumes:
+      - /Users/murat.can/pgdata:/var/lib/postgresql
+    ports:
+      - 5432:5432
+    networks:
+      - takeaway
+  takeaway-consumer:
+    build: ./takeaway-consumer
+    image: takeaway:consumer
+    container_name: takeaway-consumer
+    links:
+      - takeaway-mq:rabbitmq
+      - takeaway-postgres:postgres
+    ports:
+      - 8080:8080
+    networks:
+      - takeaway
+  takeaway-producer:
+    build: ./takeaway-producer
+    image: takeaway:producer
+    container_name: takeaway-producer
+    links:
+      - takeaway-mq:rabbitmq
+      - takeaway-postgres:postgres
+    ports:
+      - 8081:8081
+    networks:
+      - takeaway
+
+networks:
+   takeaway:
+     external:
+       name: takeaway

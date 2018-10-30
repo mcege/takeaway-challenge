@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+server:
+  port: 8080
+
+queues:
+  consumer:
+    queue: consumer.queue
+    dead-letter: consumer.dead-letter.queue
+    routing: consumer
+    exchange: consumer.exchange

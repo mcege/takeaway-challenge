@@ -1,0 +1,44 @@
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.takeaway: DEBUG
+
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/takeaway
+    username: postgres
+    password: postgres
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        enable_lazy_load_no_trans: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+    open-in-view: false
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+server:
+  port: 8081
+
+queues:
+  consumer:
+    queue: consumer.queue
+    dead-letter: consumer.dead-letter.queue
+    routing: consumer
+    exchange: consumer.exchange
