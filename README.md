@@ -2,7 +2,7 @@
 
 ## Run
 
-```
+```bash
 git clone https://github.com/mcege/takeaway-challenge.git
 docker network create takeaway
 cd takeaway-challenge/coding-challenge
