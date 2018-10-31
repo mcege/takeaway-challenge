@@ -32,9 +32,9 @@ Also, as this was thought to be an internal "test" project, RabbitMQ queues had 
 
 The PostgreSQL had been chosen to get benefit from hibernate, to make read/write processes to be quicker and an another reason to choose PostgreSQL instead of in memory database was to ensure the data to be persistently stored. But, of course as the task had been take care of as a "test" application and the amount of data and traffic had foreseen to be minimal, some further optimization hadn't been implemented. In a production environment, first of all, the database should have been designed to be highly available. The separation of read and write databases would result a better performance as well. The same applies for RabbitMQ as well, it had not been clusterized, so we put too many faith on the state of mind of RabbitMQ. In the current solution, RabbitMQ is exposable to disaster, as well as slow performance, in any t time of too many requests. 
 
-## Prometheus
+## Prometheus
 
 These links below up&run roughly in twenty seconds after docker-compose command finishes executing with "success".
 
-[Metrics of Consumer in .json format](http://localhost:8080/actuator/prometheus)
+[Metrics of Consumer in .json format](http://localhost:8080/actuator/prometheus)<br/>
 [Metrics of Producer in .json format](http://localhost:8081/actuator/prometheus)
