@@ -19,7 +19,7 @@ services:
       - POSTGRES_DBNAME=takeaway
       - ALLOW_IP_RANGE=0.0.0.0/0
     volumes:
-      - /location/as/you/desire:/var/lib/postgresql
+      - ./pgdata:/var/lib/postgresql
     ports:
       - 5432:5432
     networks:
