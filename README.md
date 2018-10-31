@@ -9,7 +9,7 @@ cd coding-challenge
 # Also please make sure your 8080 and 8081 ports are available, if not, please edit "ports" section of takeaway-consumer and takeaway-producer services as you prefer.
 docker-compose up -d --build
 ```
-You can access consumer through 8080 port of localhost and producer through 8081 port of localhost as well.
+After roughly five to ten seconds of executing docker-compose command, you can access consumer through 8080 port of localhost and producer through 8081 port of localhost as well.
 
 ## Test
 
