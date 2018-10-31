@@ -15,3 +15,18 @@ queues:
     dead-letter: consumer.dead-letter.queue
     routing: consumer
     exchange: consumer.exchange
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true

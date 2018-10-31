@@ -5,10 +5,24 @@ spring:
 server:
   port: 8080
 
-
 queues:
   consumer:
     queue: consumer.queue
     dead-letter: consumer.dead-letter.queue
     routing: consumer
     exchange: consumer.exchange
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
