@@ -1,5 +1,11 @@
 # takeaway-challenge
 
+## Prerequisite
+
+..*docker
+..*docker-compose
+..*git
+
 ## Run
 
 ```bash
