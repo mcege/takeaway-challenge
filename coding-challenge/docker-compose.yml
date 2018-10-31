@@ -19,7 +19,7 @@ services:
       - POSTGRES_DBNAME=takeaway
       - ALLOW_IP_RANGE=0.0.0.0/0
     volumes:
-      - /Users/murat.can/pgdata:/var/lib/postgresql
+      - /location/as/you/desire:/var/lib/postgresql
     ports:
       - 5432:5432
     networks:
