@@ -9,11 +9,11 @@ cd coding-challenge
 # Also please make sure your 8080 and 8081 ports are available, if not, please edit "ports" section of takeaway-consumer and takeaway-producer services as you prefer.
 docker-compose up -d --build
 ```
-You can reach consumer through 8080 port of localhost and producer through 8081 port of localhost as well.
+You can access consumer through 8080 port of localhost and producer through 8081 port of localhost as well.
 
 ## Test
 
-Please reach [.json](https://github.com/mcege/takeaway-challenge/blob/master/coding-challenge/takeaway.postman_collection.json) which had been exported from Postman, includes several GET/POST requests for the testing purposes.
+Please check [.json](https://github.com/mcege/takeaway-challenge/blob/master/coding-challenge/takeaway.postman_collection.json) which had been exported from Postman, includes several GET/POST requests for the testing purposes.
 
 ## Architecture
 
