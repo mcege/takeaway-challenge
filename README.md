@@ -34,7 +34,7 @@ The PostgreSQL had been chosen to get benefit from hibernate, to make read/write
 
 ## Prometheus
 
-These links below up&run roughly in twenty seconds after docker-compose command finishes executing with "success".
+These links below will up&run roughly in twenty seconds after docker-compose command finishes executing with "success".
 
 [Metrics of Consumer in .json format](http://localhost:8080/actuator/prometheus)<br/>
 [Metrics of Producer in .json format](http://localhost:8081/actuator/prometheus)
