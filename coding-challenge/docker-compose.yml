@@ -4,9 +4,6 @@ services:
   takeaway-mq:
     image: rabbitmq:3-management
     container_name: takeaway-mq
-    ports:
-      - 5672:5672
-      - 15672:15672
     networks:
       - takeaway
   takeaway-postgres:
@@ -20,8 +17,6 @@ services:
       - ALLOW_IP_RANGE=0.0.0.0/0
     volumes:
       - ./pgdata:/var/lib/postgresql
-    ports:
-      - 5432:5432
     networks:
       - takeaway
   takeaway-consumer:

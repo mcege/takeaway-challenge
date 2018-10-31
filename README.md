@@ -5,7 +5,8 @@
 ```
 docker network create takeaway
 cd coding-challenge
-# Edit volumes section of takeaway-postgres service in docker-compose.yml file as you prefer.
+# Edit "volumes" section of takeaway-postgres service in docker-compose.yml file as you prefer.
+# Also please make sure your 8080 and 8081 ports are available, if not, please edit "ports" section of takeaway-consumer and takeaway-producer services as you prefer.
 docker-compose up -d --build
 ```
 You can reach consumer through 8080 port of localhost and producer through 8081 port of localhost as well.
