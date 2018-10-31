@@ -1,10 +1,10 @@
 # takeaway-challenge
 
-## Prerequisite
+## Prerequisite
 
-..*docker
-..*docker-compose
-..*git
+- docker<br/>
+- docker-compose<br/>
+- git
 
 ## Run
 
